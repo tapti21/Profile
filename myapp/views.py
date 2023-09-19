@@ -1,0 +1,30 @@
+from django.shortcuts import render,redirect
+
+# Create your views here.
+from .models import *
+
+def index(request):
+     if request.method == 'POST':
+        name = request.POST.get('name')
+        email= request.POST.get('email')
+        subject = request.POST.get('subject')
+        message= request.POST.get('message')
+        a = promodel.objects.create(
+            name = name,
+            email = email,
+            subject = subject,
+            message = message
+        )
+        a.save()  
+        return redirect('index')
+     return render(request,'index.html')
+
+def inner(request):
+    return render(request,"inner-page.html")
+
+def port(request):
+    return render(request,"portfolio-details.html")
+
+
+def home(request):
+    return render(request,"")
