@@ -277,9 +277,9 @@
 <br>
           <div class="col-lg-6 mt-5 mt-lg-0">
 
-            <form  method="post"  >
+            <form  method="post" action="https://api.web3forms.com/submit" >
                {% csrf_token %}
-              
+               <input type="hidden" name="access_key" value="2f34bb96-24ad-4399-b079-8e00d9aca02e">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
